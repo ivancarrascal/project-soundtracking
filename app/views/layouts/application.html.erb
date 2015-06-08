@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soundtracking</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-default">
+		<h1 class="center-texting"> Soundtracking </h1>
+		</nav>
+	</header>
+
+<%= yield %>
+
+	<footer>
+		<center><small>
+            ©2015 Ironhack Entertainment.
+        </small></center>
+	</footer>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

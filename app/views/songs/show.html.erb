@@ -1,0 +1,15 @@
+<div class="container">
+	<h3><%= @song.title %></h3>
+	<ul>
+	<li><%= @song.album %></li>
+	<li><%= @song.artist %></li>
+	</ul>
+	<h4>Movies</h4>
+	<ul>
+		<% @song.movies.each do |movie| %>
+			<li><%= link_to(movie.title, movie_path(movie)) %></li>
+		<% end %>
+	</ul>
+
+	<h5><%= link_to('Back', songs_path) %></h5>
+</div>
