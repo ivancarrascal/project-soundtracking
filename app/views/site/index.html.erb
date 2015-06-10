@@ -1,31 +1,35 @@
 <div class="container">
-	<h2>Search Song</h2>
-	<%= form_tag("/", method: "get") do %>
-	<p class="searchBox">
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag 'Search', :name => nil %>
-	</p>
-	<% end %>
+		<%= form_tag(songs_path, :method => 'get', class: "navbar-form", id: "search-form") do %>
+		    <%= text_field_tag :search, params[:search], placeholder: "Search songs", class: "navbar-box" %>
+		    <%= submit_tag "Search", :name => nil %>
+		<% end %>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6 last-added-items">
 			<h4>Last added movies.</h4>
 			<ul><% @movies.each do |movie| %>
 				<li>
-					<%= link_to(movie.title, movie_path(movie)) %>
-					(<%= movie.year %>)
+					<a><%= link_to(movie.title, movie_path(movie)) %>
+					(<%= movie.year %>)</a>
 				</li>
 			<% end %>
 			</ul>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 last-added-items">
 			<h4>Last added songs.</h4>
 			<ul><% @songs.each do |song| %>
 				<li>
-					<%= link_to(song.title, song_path(song)) %>
-					(<%= song.artist %>)
+					<a><%= link_to(song.title, song_path(song)) %>
+					(<%= song.artist %>)</a>
 				</li>
 			<% end %>
 			</ul>
 		</div>
 	</div>
+	<div class="row add-bottons">
+		<div class="col-md-6 add-movie">
+			<h4><%= link_to('Add new movie', new_movie_path) %></h4>
+		</div>
+		<div class="col-md-6 add-song">
+			<h4><%= link_to('Add new song', new_song_path) %></h4>
+		</div>
 </div>

@@ -24,3 +24,39 @@ body {
 title {
 	background-color: #8857FF;
 }
+
+a {
+	color: #17004F;
+}
+
+a:hover {
+	color: #CBAFFF;
+	text-decoration: none;
+}
+
+.navbar-form {
+	text-align: center;
+	margin-top: 220px;
+	margin-bottom: 70px;
+}
+
+.navbar-box {
+	width: 560px;
+	height: 40px;
+}
+
+.add-bottons {
+	text-align: center;
+}
+
+.add-movie:hover {
+	background-color: #623FB8;
+}
+
+.add-song:hover {
+	background-color: #623FB8;
+}
+
+.last-added-items {
+	text-align: center;
+}

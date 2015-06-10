@@ -1,7 +1,11 @@
 class SongsController < ApplicationController
 	def index
-		@songs = Song.all
+		@songs = Song.search(params[:search])
+		if @songs.empty?
+			@songs = Song.all
+		end
 	end
+
 	def show
 		begin
 		@song = Song.find params[:id]
@@ -11,13 +15,13 @@ class SongsController < ApplicationController
 	end
 
 	def new
-		@movie = Movie.find params[:id]
-		@song = @movie.songs.new
+		@movie = Movie.find params[:movie_id]
+		@song = Song.new
 	end
 
 	def create
-		@movie = Movie.find params[:id]
-		@song = @movie.songs.new song_params
+		@movie = Movie.find params[:movie_id]
+		@song = Song.new song_params
 		if @song.save
 			redirect_to @movie
 		else
