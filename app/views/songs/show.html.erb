@@ -1,9 +1,6 @@
 <div class="container">
-	<h3><%= @song.title %></h3>
-	<ul>
-	<li><%= @song.album %></li>
-	<li><%= @song.artist %></li>
-	</ul>
+	<h2 class="song-title"><%= @song.title %></h2>
+	<h3 class="songs-author">by <%= @song.artist %> in <%= @song.album %></h3>
 	<h4>Movies</h4>
 	<ul>
 		<% @song.movies.each do |movie| %>

@@ -1,0 +1,26 @@
+<div class="container">
+	<h4>Songs</h4>
+	<ul>
+		<% @songs.each do |song| %>
+		<li>
+			<%= link_to(song.title, song_path(song)) %> (<%= song.artist %>)
+		</li>
+		<% end %>
+	</ul>
+
+	<h4>Movies</h4>
+	<ul>
+		<% @movies.each do |movie| %>
+		<li>
+			<%= link_to(movie.title, movie_path(movie)) %> (<%= movie.year %>)
+		</li>
+		<% end %>
+	</ul>
+
+	<%= form_tag(search_path, :method => 'get', class: "navbar-form", id: "search-form") do %>
+	    <%= text_field_tag :search, params[:search], placeholder: "Search", class: "navbar-box" %>
+	    <%= submit_tag "Search", :name => nil %>
+	<% end %>
+
+	<h5><%= link_to('Home', '/') %></h5>
+</div>

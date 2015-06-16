@@ -2,7 +2,7 @@ class SongsController < ApplicationController
 	def index
 		@songs = Song.search(params[:search])
 		if @songs.empty?
-			@songs = Song.all
+			render 'result_not_found'
 		end
 	end
 
@@ -12,6 +12,10 @@ class SongsController < ApplicationController
 		rescue ActiveRecord::RecordNotFound
 			render 'song_not_found'
 		end
+	end
+
+	def result_not_found
+		@songs = Song.all
 	end
 
 	def new

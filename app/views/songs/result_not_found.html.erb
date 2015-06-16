@@ -1,4 +1,5 @@
 <div class="container">
+	<h3>No se encontraron resultados.</h3>
 	<ul>
 		<% @songs.each do |song| %>
 		<li>
@@ -8,7 +9,7 @@
 	</ul>
 
 	<%= form_tag(songs_path, :method => 'get', class: "navbar-form", id: "search-form") do %>
-	    <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "navbar-box" %>
+	    <%= text_field_tag :search, params[:search], placeholder: "Search songs", class: "navbar-box" %>
 	    <%= submit_tag "Search", :name => nil %>
 	<% end %>
 

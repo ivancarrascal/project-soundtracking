@@ -60,3 +60,11 @@ a:hover {
 .last-added-items {
 	text-align: center;
 }
+
+.songs-author {
+	text-align: right;
+}
+
+.song-title {
+	text-align: center;
+}
