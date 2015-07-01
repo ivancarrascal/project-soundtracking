@@ -11,12 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601144708) do
+ActiveRecord::Schema.define(version: 20150616144015) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "year"
+    t.string   "cover"
+    t.integer  "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artists", force: :cascade do |t|
+    t.string   "name"
+    t.string   "wallpaper"
+    t.text     "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.string   "director"
     t.integer  "year"
+    t.string   "poster"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,8 +46,8 @@ ActiveRecord::Schema.define(version: 20150601144708) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
-    t.string   "album"
-    t.string   "artist"
+    t.string   "duration"
+    t.integer  "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

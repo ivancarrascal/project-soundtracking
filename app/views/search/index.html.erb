@@ -1,13 +1,4 @@
 <div class="container">
-	<h4>Songs</h4>
-	<ul>
-		<% @songs.each do |song| %>
-		<li>
-			<%= link_to(song.title, song_path(song)) %> (<%= song.artist %>)
-		</li>
-		<% end %>
-	</ul>
-
 	<h4>Movies</h4>
 	<ul>
 		<% @movies.each do |movie| %>

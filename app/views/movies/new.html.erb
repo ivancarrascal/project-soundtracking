@@ -1,0 +1,13 @@
+<div class="container">
+	<%= form_for [@movie] do |f|%>
+		<h4><%= f.label :title %>
+		<%= f.text_field :title %></h4>
+		<h4><%= f.label :director %>
+		<%= f.text_field :director %></h4>
+		<h4><%= f.label :year %>
+		<%= f.text_field :year %></h4>
+
+		<p><%= f.submit 'Save' %>
+		<%= link_to('Home', '/') %></p>
+	<% end %>
+</div>

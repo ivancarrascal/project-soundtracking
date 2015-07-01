@@ -1,0 +1,14 @@
+<div class="container">
+	<h2 class="album-title"><%= @album.title %></h2>
+	<h4>Songs</h4>
+	<table>
+		<% @album.songs.each do |song| %>
+		<tr>
+			<td><%= song.id %>.-</td>
+			<td><%= link_to(song.title, artist_album_song_path(@artist, @album, song)) %></td>
+		</tr>
+		<% end %>
+	</table>
+
+	<h5><%= link_to('Home', '/') %></h5>
+</div>

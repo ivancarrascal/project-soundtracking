@@ -2,15 +2,8 @@
 	<ul>
 		<% @songs.each do |song| %>
 		<li>
-			<%= link_to(song.title, song_path(song)) %> (<%= song.artist %>)
+			<%= link_to(song.title, artist_album_song_path(@album, song)) %>
 		</li>
 		<% end %>
 	</ul>
-
-	<%= form_tag(songs_path, :method => 'get', class: "navbar-form", id: "search-form") do %>
-	    <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "navbar-box" %>
-	    <%= submit_tag "Search", :name => nil %>
-	<% end %>
-
-	<h5><%= link_to('Home', '/') %></h5>
 </div>

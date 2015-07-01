@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
 	def index
-		@songs = Song.search(params[:search])
+		@album = Album.find params[:album_id]
+		@songs = @album.songs.search(params[:search])
 		if @songs.empty?
 			render 'result_not_found'
 		end
@@ -8,7 +9,9 @@ class SongsController < ApplicationController
 
 	def show
 		begin
-		@song = Song.find params[:id]
+			@artist = Artist.find params[:artist_id]
+			@album = @artist.albums.find params[:album_id]
+			@song = @album.songs.find params[:id]
 		rescue ActiveRecord::RecordNotFound
 			render 'song_not_found'
 		end

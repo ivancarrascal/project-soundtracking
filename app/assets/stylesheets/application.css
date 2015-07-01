@@ -1,64 +1,96 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-.center-texting {
+/*.center-texting {
 	display: block;
 	text-align: center;
-}
+}*/
 
 body {
-	background-color: #8857FF;
-}
-title {
-	background-color: #8857FF;
+	background-color: #D6D6D6;
 }
 
-a {
-	color: #17004F;
+.navbar {
+	background-color: #747474;
+	border: none;
+	border-radius: 0px;
 }
 
-a:hover {
-	color: #CBAFFF;
-	text-decoration: none;
+.glyphicon-cd {
+	font-size: 32px;
+	text-align: center;
+	margin-left: 12px;
+	margin-top: 16px;
+	color: #D6D6D6;
 }
+
+/*.navbar-title {
+	font-size: 30px;
+	font: bold;
+	margin-top: 5px;
+	text-align: center;
+}*/
 
 .navbar-form {
 	text-align: center;
-	margin-top: 220px;
-	margin-bottom: 70px;
+	margin: 15px;
 }
 
-.navbar-box {
-	width: 560px;
-	height: 40px;
+.text-box {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.search-button {
+	/*margin-bottom: 18px;*/
+	margin-left: -4px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.glyphicon-search {
+	font-size: 11px;
+}
+
+
+.dropdown-options {
+	margin-left: -4px;
+	border-radius: 0px;
+}
+
+footer {
+	margin-top: 10px;
+}
+
+.main-menu {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	z-index: 0;
+}
+
+a {
+	color: #918F7C;
+}
+
+a:hover {
+	color: #E46764;
+	text-decoration: none;
 }
 
 .add-bottons {
 	text-align: center;
 }
 
-.add-movie:hover {
-	background-color: #623FB8;
-}
-
-.add-song:hover {
-	background-color: #623FB8;
-}
-
 .last-added-items {
 	text-align: center;
+}
+
+.last-items-bar {
+	border-left-style: groove;
+	border-left-color: #918F7C;
+	border-left-width: 8px;
+	background-color: #ffffff;
 }
 
 .songs-author {
@@ -67,4 +99,69 @@ a:hover {
 
 .song-title {
 	text-align: center;
+}
+
+.artist-wallpaper {
+	width: 50%;
+}
+
+.movie-poster {
+	width: 70%;
+}
+
+.movie-director {
+	text-align: right;
+}
+
+.album-cover {
+	width: 5%;
+}
+
+.albums-list {
+	background-color: #ffffff;
+}
+
+.albums {
+	background-color: #eeeeee;
+}
+
+.songs {
+	background-color: #eeeeee;
+}
+
+.songs-list {
+	background-color: #ffffff;
+}
+
+.albums-list ul {
+	list-style: none;
+}
+
+.songs-list ul {
+	list-style: none;
+}
+
+.movie-header {
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+.song-characts {
+	text-align: right;
+}
+
+.song-movies {
+	background-color: #eeeeee;
+}
+
+.song-movies-list {
+	background-color: #ffffff;
+}
+
+.song-movies-list ul {
+	list-style: none;
+}
+
+.song-movies-poster {
+	width: 5%;
 }

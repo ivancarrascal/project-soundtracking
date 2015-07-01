@@ -1,11 +1,23 @@
 <div class="container">
-	<h2><%= @movie.title %> (<%= @movie.year %>)</h2><h3><%= @movie.director %></h3>
-	<ul>
-		<% @movie.songs.each do |song| %>
-			<li><%= link_to(song.title, song_path(song)) %> (<%= song.artist %>)</li>
-		<% end %>
-	</ul>
+	<div class="row">
+		<div class="col-md-5">
+			<img src="<%= '/' + @movie.poster %>" class="movie-poster">
+		</div>
+		<div class="col-md-7 movie-header">
+			<h2><%= @movie.title %> (<%= @movie.year %>)</h2>
+			<div class="movie-director"><h3>directed by <%= @movie.director %></h3></div>
+		</div>
+	</div>
+	<div class="row songs"><h3>Songs:</h3></div>
+	<div class="row songs-list">
+		<ul>
+			<% @movie.songs.each do |song| %>
+				<li><h4>"<%= song.title %>" from '<%= song.album.title %>' by <%= song.album.artist.name %></h4></li>
+			<% end %>
+		</ul>
+	</div>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-text="¡Mira qué canciones suenan en <%= @movie.title %>!" data-via="Soundtracking" data-lang="es">Twittear</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 	<h5><%= link_to('Home', '/') %></h5>
-	<h5><%= link_to('New song', new_song_path) %></h5>
 </div>

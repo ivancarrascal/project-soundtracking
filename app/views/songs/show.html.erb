@@ -1,12 +1,16 @@
 <div class="container">
 	<h2 class="song-title"><%= @song.title %></h2>
-	<h3 class="songs-author">by <%= @song.artist %> in <%= @song.album %></h3>
-	<h4>Movies</h4>
-	<ul>
-		<% @song.movies.each do |movie| %>
-			<li><%= link_to(movie.title, movie_path(movie)) %></li>
-		<% end %>
-	</ul>
+	<h3 class="song-characts">from <%= @song.album.title %> by <%= @song.album.artist.name %></h3>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-text="¡Mira en qué películas suena <%= @song.title %>!" data-via="Soundtracking" data-lang="es">Twittear</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<div class="row song-movies"><h3>Movies</h3></div>
+	<div class="row song-movies-list">
+		<ul>
+			<% @song.movies.each do |movie| %>
+				<li><img src="<%= '/' + movie.poster %>" class="song-movies-poster"> <%= link_to(movie.title, movie_path(movie)) %> (<%= movie.director %>)</li>
+			<% end %>
+		</ul>
+	</div>
 
 	<h5><%= link_to('Home', '/') %></h5>
 </div>

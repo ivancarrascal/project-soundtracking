@@ -1,0 +1,18 @@
+<div class="container">
+	<h3>No se encontraron resultados.</h3>
+	<ul>
+		<% @movies.each do |movie| %>
+		<li>
+			<%= link_to(movie.title, movie_path(movie)) %> (<%= movie.year %>)
+		</li>
+		<% end %>
+	</ul>
+
+	<%= form_tag('/search', :method => 'get', class: "navbar-form", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control input-lg" %>
+		<%= select_tag 'model', "<option selected='selected'>All</option><option>Movies</option><option>Artists</option><option>Albums</option><option>Songs</option>".html_safe, class: 'form-control input-lg dropdown-options' %>
+		<%= button_tag "", class: 'btn btn-default glyphicon glyphicon-search input-lg search-button', :name => nil %>
+	<% end %>
+
+	<h5><%= link_to('Home', '/') %></h5>
+</div>
