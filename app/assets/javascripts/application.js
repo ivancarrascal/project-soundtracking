@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(".text_box").keydown(function() {
+	$(this).autofocus();
+});
+
+//$(document).ready(function() {
+//	$(".st-title").show(2000);
+//})

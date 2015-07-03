@@ -1,17 +1,24 @@
-<div class="container">
+<div class="container main-container">
 	<div class="row">
-		<div class="col-md-12 main-menu">
-			<%= form_tag('/search', :method => 'get', class: "navbar-form", id: "search-form") do %>
-			    <%= text_field_tag :search, params[:search], placeholder: "Search...", class: "form-control input-lg" %>
-			    <%= select_tag 'model', "<option selected>All</option><option>Movies</option><option>Artists</option><option>Albums</option><option>Songs</option>".html_safe, class: 'form-control input-lg dropdown-options' %>
-			    <%= button_tag "", class: 'btn btn-default glyphicon glyphicon-search input-lg search-button', :name => nil %>
-			<% end %>
+		<div class="col-md-12 st-title" hidden>
+			<b>Soundtracking</b>
 		</div>
 	</div>
-	<div style="display:table;" class="input-group">
-        <span style="width: 1%;" class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-        <input type="text" autofocus="autofocus" autocomplete="off" placeholder="Search Here" name="search" style="" class="form-control">
-    </div>
+    <%= render "tagcloud" %>
+	<div class="row add-bottons">
+		<div class="col-md-3 add-movie">
+			<%= link_to('Add new movie', new_movie_path) %>
+		</div>
+		<div class="col-md-3 add-song">
+			<button class="btn btn-lg"><%= link_to('Add new song', '/') %></button>
+		</div>
+		<div class="col-md-3 add-artist">
+			<button class="btn btn-lg"><%= link_to('Add new artist', new_artist_path) %></button>
+		</div>
+		<div class="col-md-3 add-album">
+			<button class="btn btn-lg"><%= link_to('Add new album', '/') %></button>
+		</div>
+	</div>
 	<div class="row last-items-bar">
 		<div class="col-md-3 last-added-items">
 			<h4>Last added movies.</h4>
@@ -27,7 +34,7 @@
 			<h4>Last added songs.</h4>
 			<ul><% @songs.each do |song| %>
 				<li>
-					<a><%= link_to(song.title, artist_album_song_path(@artist, @album, song)) %> - <%= song.album.artist.name %></a>
+					<a><%= song.title %> - <%= song.album.artist.name %></a>
 				</li>
 			<% end %>
 			</ul>
@@ -50,20 +57,6 @@
 				</li>
 			<% end %>
 			</ul>
-		</div>
-	</div>
-	<div class="row add-bottons">
-		<div class="col-md-3 add-movie">
-			<%= link_to('Add new movie', new_movie_path) %>
-		</div>
-		<div class="col-md-3 add-song">
-			<button class="btn btn-lg"><%= link_to('Add new song', '/') %></button>
-		</div>
-		<div class="col-md-3 add-artist">
-			<button class="btn btn-lg"><%= link_to('Add new artist', new_artist_path) %></button>
-		</div>
-		<div class="col-md-3 add-album">
-			<button class="btn btn-lg"><%= link_to('Add new album', '/') %></button>
 		</div>
 	</div>
 </div>

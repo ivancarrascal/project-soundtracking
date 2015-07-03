@@ -4,21 +4,29 @@
 }*/
 
 body {
-	background-color: #D6D6D6;
+	background-color: #ffffff;
+}
+
+.st-title {
+	position: fixed;
+	text-align: center;
+	font-size: 5em;
+	z-index: 0;
+	margin-top: 100px;
 }
 
 .navbar {
-	background-color: #747474;
+	background-color: #070217;
 	border: none;
 	border-radius: 0px;
 }
 
-.glyphicon-cd {
-	font-size: 32px;
-	text-align: center;
-	margin-left: 12px;
-	margin-top: 16px;
-	color: #D6D6D6;
+#scroll_bar {
+	opacity: 0.7;
+}
+
+#scroll_bar:hover {
+	opacity: 1;
 }
 
 /*.navbar-title {
@@ -61,6 +69,10 @@ body {
 
 footer {
 	margin-top: 10px;
+}
+
+.main-container {
+	box-shadow: 7px 3px 7px 3px #888888;
 }
 
 .main-menu {
@@ -164,4 +176,115 @@ a:hover {
 
 .song-movies-poster {
 	width: 5%;
+}
+
+.album-cover-main {
+	width: 70%;
+}
+
+.album-header {
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+.album-artists {
+	text-align: right;
+}
+
+.album-songs-header {
+	background-color: #eeeeee;
+}
+
+.album-tracklist {
+	background-color: #ffffff;
+}
+
+.album-tracklist ul {
+	list-style: none;
+}
+
+
+
+/* tagcloud*/
+#htmltagcloud {
+	line-height: 2.4em;
+	word-spacing: normal;
+	letter-spacing: normal;
+	text-transform: none;
+	text-align: justify;
+	text-indent: 0;
+	z-index: -1;
+}
+
+#htmltagcloud a:link {
+	text-decoration: none;
+}
+
+#htmltagcloud a:visited {
+	text-decoration: none;
+}
+
+#htmltagcloud a:hover {
+	color: white;
+	background-color: #05f;
+}
+
+#htmltagcloud a:active {
+	color: white;
+	background-color: #03d;
+}
+
+.wrd {
+	padding: 0;
+	position: relative;
+}
+
+.wrd a {
+	text-decoration:none;
+}
+
+.tagcloud0 {
+	font-size: 1.0em;
+	color: #83b5dd;
+	z-index: 10;
+}
+
+.tagcloud0 a {
+	color: #83b5dd;
+}
+
+.tagcloud1 {
+	font-size: 3.0em;
+	color: #9b90c8;
+	z-index: 5;
+}
+
+.tagcloud1 a {
+	color: #9b90c8;
+}
+
+.tagcloud2 {
+	font-size: 3.6em;
+	color: #006bb6;
+	z-index:3;
+}
+
+.tagcloud2 a {
+	color: #006bb6;
+}
+
+.tagcloud3 {
+	font-size: 4.5em;
+	color: #e46764;
+	z-index: 0;
+	opacity: 1;
+}
+
+.tagcloud3 a {
+	color: #e46764;
+}
+
+.freq {
+	font-size: 10pt !important;
+	color: #bbb;
 }

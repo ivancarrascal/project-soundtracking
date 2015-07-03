@@ -7,7 +7,7 @@
 	<div class="row song-movies-list">
 		<ul>
 			<% @song.movies.each do |movie| %>
-				<li><img src="<%= '/' + movie.poster %>" class="song-movies-poster"> <%= link_to(movie.title, movie_path(movie)) %> (<%= movie.director %>)</li>
+				<li><img src="<%= '/' + movie.poster %>" class="song-movies-poster"> <%= link_to(movie.title, movie_path(movie)) %> (<%= movie.director %>, <%= movie.year %>)</li>
 			<% end %>
 		</ul>
 	</div>
